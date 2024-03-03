@@ -20,9 +20,9 @@ const UserSchema = new Schema({
         type: Schema.Types.String,
         require: true,
     },
-    avatar: {
+    profilePic: {
         type: Schema.Types.String,
-        default: "https://firebasestorage.googleapis.com/v0/b/mern-estate-e6aeb.appspot.com/o/images%2Fuser.png?alt=media&token=c1e87f8c-fea1-4442-ba10-f2653177c071"
+        default: ""
     }
 },
     {
