@@ -7,18 +7,19 @@ export const sendMessage = async (req, res) => {
         const { id: receiverId } = req.params;
         const { message } = req.body;
         const senderId = req.user._id;
-
+        console.log(senderId)
+        console.log(receiverId)
         let conversation = await Conversation.findOne({
-            participants: { $all: [receiverId, senderId] }
+            participants: { $all: [senderId, receiverId] }
         });
 
         if (!conversation) {
             conversation = await Conversation.create({
-                participants: { $all: [receiverId, senderId] }
+                participants: [senderId, receiverId]
             })
         };
 
-        const newMessage = Message.create({
+        const newMessage = new Message({
             senderId,
             receiverId,
             message
@@ -28,12 +29,37 @@ export const sendMessage = async (req, res) => {
             conversation.messages.push(newMessage._id);
         };
 
-        await conversation.save();
-        await await newMessage.save();
-
+        await Promise.all([conversation.save(), newMessage.save()]);
         res.status(200).json(newMessage);
 
     } catch (error) {
+        res.status(500).send("something went wrong");
+    }
+};
+
+
+export const getMessages = async (req, res) => {
+    try {
+        const { id: userToChatId } = req.params;
+        const senderId = req.user._id;
+
+        console.log(userToChatId)
+        console.log(senderId)
+
+        const conversation = await Conversation.findOne({
+            participants: { $all: [senderId, userToChatId] },
+        }).populate("messages");
+
+        if (!conversation) return res.status(200).send([]);
+
+        const messages = conversation.messages;
+
+        res.status(200).send({
+            messages
+        });
+
+    } catch (error) {
+        console.log(error)
         res.status(500).send("something went wrong");
     }
 };

@@ -4,6 +4,7 @@ import { authRoutes } from "./routes/authRoute.js";
 import { connectToMongoDB } from "./db/index.js";
 import cookieParser from "cookie-parser";
 import { messageRoute } from "./routes/messageRoute.js";
+import { userRoutes } from "./routes/userRoute.js";
 configDotenv()
 
 const app = express()
@@ -16,7 +17,8 @@ app.get("/", (req, res) => {
 
 app.use(express.json())
 app.use(cookieParser())
-app.use("/api/user", authRoutes)
+app.use("/api/auth", authRoutes)
+app.use("/api/user", userRoutes)
 app.use("/api/messages", messageRoute)
 
 
