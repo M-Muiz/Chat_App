@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react'
 import CheckBox from './CheckBox'
+import useRegister from "../../hooks/useRegister" 
 
 const Register = () => {
   const [inputs, setInputs] = useState({
@@ -13,9 +14,11 @@ const Register = () => {
     setInputs({ ...inputs, gender })
   };
 
+  const {register} = useRegister()
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    useRegis
+    await register()
   };
 
   return (

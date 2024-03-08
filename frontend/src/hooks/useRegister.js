@@ -6,11 +6,18 @@ const useRegister = () => {
     const register = async ({ username, email, password }) => {
         const success = handleInputErrors({ username, email, password });
         if (!success) return;
+        setLoading(true);
         try {
+            // const res = await fetch("http://localhost:9000/api/user/register");
+            console.log("working peoperly")
 
         } catch (error) {
+            setLoading(false);
             toast.error(error.message)
         }
+
+        return { loading, signup };
+
     }
 }
 
