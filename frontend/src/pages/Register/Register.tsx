@@ -15,7 +15,7 @@ const Register = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(inputs)
+    useRegis
   };
 
   return (
