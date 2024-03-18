@@ -1,8 +1,22 @@
 import { IoLogOut } from "react-icons/io5";
+import useLogout from "../../../hooks/useLogout";
+import toast from "react-hot-toast";
 
 
 const Logout = () => {
-  return <div className="mt-auto"><IoLogOut className="w-6 h-6 cursor-pointer text-white"/></div>
+
+  const { loading, logout } = useLogout();
+
+  return (
+    <div className="mt-auto">
+      {!loading ? (
+        <IoLogOut onClick={logout} className="w-6 h-6 cursor-pointer text-white" />
+
+      ) : (
+        toast.loading("Logging out...")
+      )}
+    </div>
+  )
 }
 
 export default Logout
