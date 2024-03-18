@@ -3,4 +3,10 @@ export type registerUserTypes = {
     email: string,
     password: string,
     gender: string,
-}
+};
+
+
+export type loginUserTypes = {
+    email: string,
+    password: string,
+};
