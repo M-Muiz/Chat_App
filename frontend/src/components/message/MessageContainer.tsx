@@ -1,4 +1,3 @@
-import React from 'react'
 import Messages from './msgs/Messages'
 import MessageInput from './messageinput/MessageInput'
 import { TiMessage } from 'react-icons/ti'
@@ -6,13 +5,19 @@ import { TiMessage } from 'react-icons/ti'
 const MessageContainer = () => {
     const noChatSelected = false;
     return (
-        <div className='md:min-w-[450px] flex flex-col'>
+        <div className='md:min-w-[450px] w-[800px] flex flex-col bg-white'>
             {noChatSelected ?
                 (<NoChatSelected />)
                 : (
                     <>
-                        <div className='bg-slate-500 px-4 py-2 mb-2'>
-                            <span className='label-text'>To:</span> <span className='text-gray-900 font-bold'>John doe</span>
+                        <div className='shadow-lg p-6 mb-2 flex items-center justify-between'>
+                            <div>
+
+                                <span className='label-text'>To:</span> <span className='text-[#536dfe] font-bold'>John doe</span>
+                            </div>
+                            <div>
+                                ds
+                            </div>
                         </div>
                         <Messages />
                         <MessageInput />

@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/main.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+body{
+    background-color: #7eb2f2;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ::-webkit-scrollbar {
@@ -27,3 +26,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #242424;
 }
+
+/* #536dfe */
+/* #ffffff */
