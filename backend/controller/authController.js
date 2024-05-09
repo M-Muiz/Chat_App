@@ -52,16 +52,22 @@ export const register = async (req, res) => {
 
 
 export const login = async (req, res) => {
+
     try {
         const { email, password } = req.body;
         const user = await User.findOne({ email });
-        const isPasswordCorrect = bcrypt.compare(password, user?.password || "");
 
-        if (!user || !isPasswordCorrect) {
-            return res.status(401).send({ message: "Wrong credentials" });
+        if (user) {
+            const isPasswordCorrect = await bcrypt.compare(password, user.password);
+            if (!isPasswordCorrect) {
+                return res.status(400).send({ status: false, message: "Invalid credentials" });
+            } else {
+                generateTokenSetCookie(user._id, res)
+                res.status(200).send({ status: true, message: "Login Successfully", user })
+            }
+        } else {
+            return res.status(400).send({ status: false, message: "User not found" });
         }
-        generateTokenSetCookie(user._id, res)
-        res.status(200).send({ message: "Login Successfully", user })
 
     } catch (error) {
         res.status(500).send("something went wrong");

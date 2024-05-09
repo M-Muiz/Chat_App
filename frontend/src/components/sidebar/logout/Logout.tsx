@@ -13,7 +13,7 @@ const Logout = () => {
         <IoLogOut onClick={logout} className="w-6 h-6 cursor-pointer text-white" />
 
       ) : (
-        toast.loading("Logging out...")
+        toast.success("Logout successfully")
       )}
     </div>
   )
