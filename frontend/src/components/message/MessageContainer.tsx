@@ -5,18 +5,21 @@ import { TiMessage } from 'react-icons/ti'
 const MessageContainer = () => {
     const noChatSelected = false;
     return (
-        <div className='md:min-w-[450px] w-[800px] flex flex-col bg-white'>
+        <div className='md:min-w-[450px] w-[1100px] flex flex-col bg-white rounded-r-md relative'>
+            <div className="absolute top-0 right-0 left-0 bottom-0 bg-[#536dfe] opacity-10"></div>
             {noChatSelected ?
                 (<NoChatSelected />)
                 : (
                     <>
-                        <div className='shadow-lg p-6 mb-2 flex items-center justify-between'>
-                            <div>
-
-                                <span className='label-text'>To:</span> <span className='text-[#536dfe] font-bold'>John doe</span>
+                        <div className='border-b border-black/20 h-[70px] p-6 mb-2 flex items-center justify-between'>
+                            <div className='flex items-center gap-2'>
+                                <span>
+                                    <img className='h-8 w-8 rounded-full' src="https://images.unsplash.com/photo-1709626011485-6fe000ea2dbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                                </span>
+                                <span className='text-[#536dfe] font-bold'>John doe</span>
                             </div>
-                            <div>
-                                ds
+                            <div className='text-red-500'>
+                                active: 15hrs ago
                             </div>
                         </div>
                         <Messages />

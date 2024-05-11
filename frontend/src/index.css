@@ -4,6 +4,7 @@
 
 body{
     background-color: #7eb2f2;
+    color: white;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -25,6 +26,11 @@ body{
 
 ::-webkit-scrollbar-thumb:hover {
     background: #242424;
+}
+
+
+.smoothanimate{
+    transition: all 1.5s;
 }
 
 /* #536dfe */
