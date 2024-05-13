@@ -8,8 +8,10 @@ const Converstaions = () => {
   return (
     <div>
 
-      {conversations.map((conversation: any) => (
-        <Conversation key={conversation._id }  conversation={conversation}   emoji={getRandomEmoji()}/>
+      {conversations.map((conversation, ind: any) => (
+        <Conversation
+          key={conversation} conversation={conversation} emoji={getRandomEmoji()} lastIdx={ind === conversations.length -1}
+        />
       ))}
 
       {loading ? <span className='loading loading-spinner mx-auto'></span> : null}
