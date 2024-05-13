@@ -7,8 +7,6 @@ const Conversation = ({ conversation, key, emoji, lastIdx }: any) => {
 
   const isSelected = selectedConversation?._id === conversation._id;
 
-  console.log(isSelected)
-
   return (
     <>
 
