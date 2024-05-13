@@ -1,9 +1,8 @@
-import React from 'react'
 import useConversation from '../../../zustand/getConversation';
 
-const Conversation = ({ conversation, key, emoji, lastIdx }: any) => {
+const Conversation = ({ conversation, emoji, lastIdx }: any) => {
 
-  const {selectedConversation, setSelectedConversation}: any= useConversation();
+  const { selectedConversation, setSelectedConversation }: any = useConversation();
 
   const isSelected = selectedConversation?._id === conversation._id;
 
@@ -11,11 +10,11 @@ const Conversation = ({ conversation, key, emoji, lastIdx }: any) => {
     <>
 
       <div className={'flex gap-2 items-center hover:bg-blue-400 rounded p-2 py-4 cursor-pointer ' + (isSelected ? 'bg-blue-400' : '')}
-      onClick={() => setSelectedConversation(conversation)}
+        onClick={() => setSelectedConversation(conversation)}
       >
         <div className="avatar">
           <div className="w-12 rounded-full">
-            <img src={conversation.profilePic}alt="User Avatar" />
+            <img src={conversation.profilePic} alt="User Avatar" />
           </div>
         </div>
         <div className="flex flex-col flex-1">

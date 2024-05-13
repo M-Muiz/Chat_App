@@ -3,7 +3,7 @@ import useGetConversations from '../../../hooks/useGetConversations'
 import { getRandomEmoji } from '../../../utils/emoji';
 
 const Converstaions = () => {
-  const { loading, conversations } = useGetConversations();
+  const { loading, conversations }   = useGetConversations();
   console.log(conversations)
   return (
     <div>

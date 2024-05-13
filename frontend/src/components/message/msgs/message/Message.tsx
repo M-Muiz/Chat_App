@@ -2,7 +2,7 @@ import { useAuthContext } from '../../../../context/AuthContext'
 import useConversation from '../../../../zustand/getConversation';
 
 const Message = ({message} : any) => {
-    console.log(message? "true" : "false")
+    console.log(message)
     const { authUser }: any = useAuthContext();
     const { selectedConverstaion }: any = useConversation();
     const fromMe = message.senderId === authUser._id;
