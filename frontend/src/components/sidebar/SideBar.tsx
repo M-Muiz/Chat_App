@@ -12,7 +12,7 @@ const SideBar = () => {
     const [closeSidebar, setCloseSidebar] = useState(false);
 
     return (
-        <div className={`flex flex-col border-r h-full bg-[#536dfe] rounded-l-md ${closeSidebar ? "w-32 smoothanimate" : "w-[400px]"} smoothanimate`}>
+        <div className={`flex flex-col border-r h-full bg-[#536dfe] relative rounded-l-md ${closeSidebar ? "w-32 smoothanimate" : "w-[400px]"} smoothanimate`}>
 
             <div className="flex items-center gap-6 h-[70px] border p-6 border-black/20">
                 <RiMenu2Fill onClick={() => setCloseSidebar(!closeSidebar)} />
@@ -20,7 +20,7 @@ const SideBar = () => {
             </div>
             <div className="p-4"></div>
             <Converstaions />
-            <div className="">
+            <div className="p-4 absolute bottom-2">
                 <Logout />
             </div>
         </div>
