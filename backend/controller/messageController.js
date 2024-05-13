@@ -4,11 +4,11 @@ import Conversation from "../models/Converstaion.js"
 
 export const sendMessage = async (req, res) => {
     try {
+        console.log(req.body)
         const { id: receiverId } = req.params;
         const { message } = req.body;
+        console.log(message, receiverId)
         const senderId = req.user._id;
-        console.log(senderId)
-        console.log(receiverId)
         let conversation = await Conversation.findOne({
             participants: { $all: [senderId, receiverId] }
         });
