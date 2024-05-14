@@ -14,7 +14,7 @@ const Messages = () => {
 
       {!loading && msg &&
         msg.map((message: any) => (
-          <Message message={message} />
+          <Message key={message._id} message={message} />
         ))};
 
 

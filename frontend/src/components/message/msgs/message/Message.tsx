@@ -4,7 +4,7 @@ import useConversation from '../../../../zustand/getConversation';
 const Message = ({ message }: any) => {
     const { authUser }: any = useAuthContext();
     const { selectedConversation }: any = useConversation();
-    const fromMe = message.senderId === authUser._id;
+    const fromMe = message.senderId === authUser.user._id;
 
     const chatClassName = fromMe ? 'chat-end' : 'chat-start';
     const profilePic = fromMe ? authUser.user.profilePic : selectedConversation?.profilePic;
