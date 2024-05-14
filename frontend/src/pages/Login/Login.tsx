@@ -20,7 +20,7 @@ const Login = () => {
                 <h1 className='text-3xl font-semibold text-center text-[#536dfe]'>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="py-3">
-                        <label className="label p-2">
+                        <label className="label">
                             <span className='text-sm text-black font-semibold'>Email</span>
                         </label>
                         <input type="text" placeholder='user@gmail.com' id="" className='w-full input p-3 text-black h-10 bg-transparent  text-sm border-black focus-visible:border-[#536dfe]' onChange={(e) => setEmail(e.target.value)} />
@@ -28,17 +28,17 @@ const Login = () => {
 
                     <div>
                         <label className="label">
-                            
-                        <span className='text-sm text-black font-semibold'>Password</span>
+
+                            <span className='text-sm text-black font-semibold'>Password</span>
                         </label>
                         <input type="password" placeholder='***********' id="" className='w-full input p-3 text-black h-10 bg-transparent  text-sm border-black focus-visible:border-[#536dfe]' onChange={(e) => setPassword(e.target.value)} />
                     </div>
 
-                    <div className="mt-2">
-                        <h5 className='text-sm'>Al'ready have an account <span className='text-blue-500 cursor-pointer hover:underline'>Login</span></h5>
+                    <div className="mt-3">
+                        <h5 className='text-xs text-black font-semibold'>Al'ready have an account <span className='text-blue-500 cursor-pointer hover:underline'>Login</span></h5>
                     </div>
 
-                    <button className='btn btn-block btn-sm mt-2'>
+                    <button className='h-10 bg-[#536dfe] w-full text-white mt-2 rounded-md'>
                         {loading ? <span className='loading loading-spinner'></span> : "Login"}
                     </button>
                 </form>
