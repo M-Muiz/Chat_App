@@ -9,6 +9,9 @@ const Message = ({ message }: any) => {
     const chatClassName = fromMe ? 'chat-end' : 'chat-start';
     const profilePic = fromMe ? authUser.user.profilePic : selectedConversation?.profilePic;
 
+    const created = new Date(message.createdAt);
+    const messageDate = created.toLocaleDateString();
+    const messageTime = ''
 
     return (
         <div className={`chat py-6 ${chatClassName}`}>
@@ -19,7 +22,9 @@ const Message = ({ message }: any) => {
             </div>
             <div className={`chat-bubble py-4 text-[#536dfe] tracking-wide font-medium shadow-xl ${fromMe ? "bg-white shadow-blue-200 " : "bg-[#536dfe] text-white shadow-blue-300"}`}>{message.message}
             </div>
-            <div className="chat-footer opacity-90 mt-1 font-semibold text-xs flex gap-1 items-center text-black">1:49</div>
+            <div className="chat-footer opacity-90 mt-1 font-semibold text-[10px] flex gap-1 items-center text-black">
+                {messageDate} 
+            </div>
         </div>
     )
 }

@@ -1,21 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
-const getOnlySearchUser = async ({ searchValue }: String) => {
+const useGetOnlyConversations = () => {
+    const [loading, setLoading] = useState(false);
+    const [conversations, setConversations] = useState([]);
 
 
-    const [loadinn, setLoading] = useState(false);
-    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        const getUsers = async (searchVlaue: string) => {
+            setLoading(true);
+            try {
+                const res = await fetch(`/api/user/search_users/${searchVlaue}`);
+                const data = await res.json();
+                if (data.message) {
+                    throw new Error(data.message);
+                }
+                setConversations(data);
+            } catch (error: any) {
+                toast.error(error.message)
+            } finally {
+                setLoading(false);
+            }
+        };
+        getUsers();
+    }, [])
 
-    try {
-        const res = await fetch(`/api/user/search_users${searchValue}`);
-        const data = await res.json();
-        if (data.status === 400) {
-            return console.log("user not found")
-        }
-    } catch (error) {
+    return { loading, conversations }
 
-    }
+};
 
-}
-
-export default getOnlySearchUser
+export default useGetOnlyConversations;
