@@ -43,7 +43,7 @@ const Login = () => {
                         </h5>
                     </div>
 
-                    <button className='h-10 bg-[#536dfe] w-full text-white mt-2 rounded-md'>
+                    <button disabled={loading} className='h-10 bg-[#536dfe] w-full text-white mt-2 rounded-md disabled:opacity-90'>
                         {loading ? <span className='loading loading-spinner'></span> : "Login"}
                     </button>
                 </form>
