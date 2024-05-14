@@ -6,7 +6,7 @@ const CheckBox = ({ onCheckboxChange, selectedGender }: any) => {
 			<div className='form-control'>
 				<label className={`label gap-2 cursor-pointer`}>
 					<span className='label-text'>Male</span>
-					<input type='checkbox' className={`checkbox border-slate-900 ${selectedGender === "male" ? "selected" : ""}`}
+					<input type='checkbox' className={`checkbox border-[#536dfe] ${selectedGender === "male" ? "selected" : ""}`}
 						checked={selectedGender === "male"}
 						onChange={() => onCheckboxChange("male")} />
 				</label>
@@ -14,7 +14,7 @@ const CheckBox = ({ onCheckboxChange, selectedGender }: any) => {
 			<div className='form-control'>
 				<label className={`label gap-2 cursor-pointer`}>
 					<span className='label-text'>Female</span>
-					<input type='checkbox' className={`checkbox border-slate-900 ${selectedGender === "female" ? "selected" : ""}`}
+					<input type='checkbox' className={`checkbox border-[#536dfe] ${selectedGender === "female" ? "selected" : ""}`}
 						checked={selectedGender === "female"}
 						onChange={() => onCheckboxChange("female")} />
 				</label>
