@@ -8,7 +8,6 @@ const Message = ({ message }: any) => {
 
     const chatClassName = fromMe ? 'chat-end' : 'chat-start';
     const profilePic = fromMe ? authUser.user.profilePic : selectedConversation?.profilePic;
-    const differentColors = fromMe ? 'from-blue-500' : '';
 
 
     return (
@@ -18,9 +17,9 @@ const Message = ({ message }: any) => {
                     <img src={profilePic} alt="User Avatar" />
                 </div>
             </div>
-            <div className={`chat-bubble py-4 text-black tracking-wide font-medium bg-white shadow-xl shadow-blue-200 ${differentColors}`}>{message.message}
+            <div className={`chat-bubble py-4 text-[#536dfe] tracking-wide font-medium shadow-xl ${fromMe ? "bg-white shadow-blue-200 " : "bg-[#536dfe] text-white shadow-blue-300"}`}>{message.message}
             </div>
-            <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">1:49</div>
+            <div className="chat-footer opacity-90 mt-1 font-semibold text-xs flex gap-1 items-center text-black">1:49</div>
         </div>
     )
 }
