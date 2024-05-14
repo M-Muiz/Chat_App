@@ -9,3 +9,18 @@ export const getUsersForSidebar = async (req, res) => {
         res.status(500).send("something went wrong");
     }
 };
+
+
+export const getUserByName = async (req, res) => {
+    try {
+        const { searchValue } = req.body;
+        const users = await User.find({ username: { $regex: searchValue, $options: "i" } }).select("-password");
+        console.log(users)
+        if (!users) {
+            return res.status(400).send("User not found");
+        }
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(500).send("something went wrong");
+    }
+};
