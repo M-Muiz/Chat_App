@@ -28,7 +28,7 @@ const Register = () => {
     <div className='flex flex-col items-center justify-center min-w-96 mx-auto bg-white rounded-md p-6 py-2'>
       <div className="w-full rounded-lg py-8">
 
-        <h1 className='text-3xl font-semibold text-center text-[#536dfe]'>Login</h1>
+        <h1 className='text-3xl font-semibold text-center text-[#536dfe]'>Register</h1>
         <form onSubmit={handleSubmit}>
           <div>
             <label className="label">
@@ -37,14 +37,14 @@ const Register = () => {
             <input type="text" placeholder='Username' value={inputs.username} onChange={(e) => setInputs({ ...inputs, username: e.target.value })} className='w-full input p-3 text-black h-10 bg-transparent  text-sm border-black focus-visible:border-[#536dfe]' />
           </div>
 
-          <div>
+          <div className='pt-3'>
             <label className="label">
               <span className='text-sm text-black font-semibold'>Email</span>
             </label>
             <input type="text" placeholder='user@gmail.com' value={inputs.email} onChange={(e) => setInputs({ ...inputs, email: e.target.value })} className='w-full input p-3 text-black h-10 bg-transparent  text-sm border-black focus-visible:border-[#536dfe]' />
           </div>
 
-          <div>
+          <div className='py-3'>
             <label className="label">
               <span className='text-sm text-black font-semibold'>Password</span>
             </label>
