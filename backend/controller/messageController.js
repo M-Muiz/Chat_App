@@ -4,7 +4,6 @@ import Conversation from "../models/Converstaion.js"
 
 export const sendMessage = async (req, res) => {
     try {
-        console.log(req.body)
         const { id: receiverId } = req.params;
         const { message } = req.body;
         const senderId = req.user._id;

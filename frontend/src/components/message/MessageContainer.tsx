@@ -4,6 +4,9 @@ import { TiMessage } from 'react-icons/ti'
 import useConversation from '../../zustand/getConversation';
 import { useEffect } from 'react';
 import { useAuthContext } from '../../context/AuthContext';
+import { MdDelete } from "react-icons/md";
+import { BiSolidUserDetail } from "react-icons/bi";
+
 
 const MessageContainer = () => {
 
@@ -27,8 +30,10 @@ const MessageContainer = () => {
                                 </span>
                                 <span className='text-[#536dfe] font-bold'>{selectedConversation.username}</span>
                             </div>
-                            <div className='text-red-500'>
-                                active: 15hrs ago
+                            <div className='flex items-center gap-2'>
+                            <MdDelete color='#536dfe' />
+                            <BiSolidUserDetail color='#536dfe' />
+
                             </div>
                         </div>
                         <Messages />
