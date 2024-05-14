@@ -1,15 +1,16 @@
 import { useAuthContext } from '../../../../context/AuthContext'
 import useConversation from '../../../../zustand/getConversation';
 
-const Message = ({message} : any) => {
+const Message = ({ message }: any) => {
     const { authUser }: any = useAuthContext();
-    const { selectedConverstaion }: any = useConversation();
+    const { selectedConversation }: any = useConversation();
     const fromMe = message.senderId === authUser._id;
 
     const chatClassName = fromMe ? 'chat-end' : 'chat-start';
-    const profilePic = fromMe ? authUser.profilePic : selectedConverstaion?.profilePic;
+    const profilePic = fromMe ? authUser.user.profilePic : selectedConversation?.profilePic;
     const differentColors = fromMe ? 'from-blue-500' : '';
 
+    console.log(fromMe)
 
     return (
         <div className={`chat py-6 ${chatClassName}`}>
