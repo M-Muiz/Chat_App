@@ -7,13 +7,13 @@ const Messages = () => {
   const { loading, messages } = useGetMessages()
   // const [loading, setLaoding] = useState(true)
 
-  let msg = messages.messages
+  let msg = messages.messages;
   return (
 
     <div className='px-4 flex-1 overflow-auto'>
 
-      {!loading && messages?.length > 0 &&
-        messages?.map((message: any) => (
+      {!loading && msg &&
+        msg.map((message: any) => (
           <Message message={message} />
         ))};
 
