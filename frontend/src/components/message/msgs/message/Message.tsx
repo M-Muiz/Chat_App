@@ -10,7 +10,6 @@ const Message = ({ message }: any) => {
     const profilePic = fromMe ? authUser.user.profilePic : selectedConversation?.profilePic;
     const differentColors = fromMe ? 'from-blue-500' : '';
 
-    console.log(fromMe)
 
     return (
         <div className={`chat py-6 ${chatClassName}`}>
