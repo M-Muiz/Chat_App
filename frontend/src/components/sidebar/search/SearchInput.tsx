@@ -3,6 +3,7 @@ import { CgSearch } from "react-icons/cg";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import { IoConstructSharp } from "react-icons/io5";
 
 
 const SearchInput = () => {
@@ -10,7 +11,7 @@ const SearchInput = () => {
   const [openSearch, setOpenSearch] = useState(false);
   console.log(openSearch)
   const newUpdate = () => {
-    toast("Coming Soon")
+    toast(<div className="flex items-center gap-2"><IoConstructSharp /> Coming Soon</div>)
   }
 
   return (
