@@ -14,23 +14,24 @@ const Login = () => {
     };
 
     return (
-        <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
-            <div className="w-full rounded-lg shadow-md p-6 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+        <div className='flex flex-col items-center justify-center min-w-96 mx-auto bg-white rounded-md p-6 py-2'>
+            <div className="w-full rounded-lg py-8">
 
-                <h1 className='text-3xl font-semibold text-center text-gray-300'>Login</h1>
+                <h1 className='text-3xl font-semibold text-center text-[#536dfe]'>Login</h1>
                 <form onSubmit={handleSubmit}>
-                    <div>
+                    <div className="py-3">
                         <label className="label p-2">
-                            <span className='text-sm label-text'>Email</span>
+                            <span className='text-sm text-black font-semibold'>Email</span>
                         </label>
-                        <input type="text" placeholder='user@gmail.com' id="" className='w-full input input-bordered h-10' onChange={(e) => setEmail(e.target.value)} />
+                        <input type="text" placeholder='user@gmail.com' id="" className='w-full input p-3 text-black h-10 bg-transparent  text-sm border-black focus-visible:border-[#536dfe]' onChange={(e) => setEmail(e.target.value)} />
                     </div>
 
                     <div>
                         <label className="label">
-                            <span className='text-sm label-text'>Password</span>
+                            
+                        <span className='text-sm text-black font-semibold'>Password</span>
                         </label>
-                        <input type="password" placeholder='***********' id="" className='w-full input input-bordered h-10' onChange={(e) => setPassword(e.target.value)} />
+                        <input type="password" placeholder='***********' id="" className='w-full input p-3 text-black h-10 bg-transparent  text-sm border-black focus-visible:border-[#536dfe]' onChange={(e) => setPassword(e.target.value)} />
                     </div>
 
                     <div className="mt-2">
