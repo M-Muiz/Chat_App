@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import useLogin from '../../hooks/useLogin';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -35,7 +36,11 @@ const Login = () => {
                     </div>
 
                     <div className="mt-3">
-                        <h5 className='text-xs text-black font-semibold'>Al'ready have an account <span className='text-blue-500 cursor-pointer hover:underline'>Login</span></h5>
+                        <h5 className='text-xs text-black font-semibold'>Don't have an account
+                            <Link to="/register">
+                                <span className='text-blue-500 cursor-pointer hover:underline pl-2'>Register Here</span>
+                            </Link>
+                        </h5>
                     </div>
 
                     <button className='h-10 bg-[#536dfe] w-full text-white mt-2 rounded-md'>
