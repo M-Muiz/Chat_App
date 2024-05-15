@@ -1,3 +1,4 @@
+import useShowSidebar from '../../../zustand/ShowSidebar';
 import useConversation from '../../../zustand/getConversation';
 
 const Conversation = ({ conversation, emoji, lastIdx }: any) => {
@@ -5,6 +6,8 @@ const Conversation = ({ conversation, emoji, lastIdx }: any) => {
   const { selectedConversation, setSelectedConversation }: any = useConversation();
 
   const isSelected = selectedConversation?._id === conversation._id;
+  const { show } = useShowSidebar();
+
 
   return (
     <>
@@ -17,12 +20,16 @@ const Conversation = ({ conversation, emoji, lastIdx }: any) => {
             <img src={conversation.profilePic} alt="User Avatar" />
           </div>
         </div>
-        <div className="flex flex-col flex-1">
-          <div className='flex gap-3 justify-between'>
-            <p className='font-blod text-white font-semibold tracking-wider'>{conversation.username}</p>
-            <span className='text-sm'>{emoji}</span>
+        {!show &&
+          <div className="flex flex-col flex-1">
+            <div className='flex gap-3 justify-between'>
+              <p className='font-blod text-white font-semibold tracking-wider'>{conversation.username}</p>
+              <span className='text-sm'>{emoji}</span>
+            </div>
           </div>
-        </div>
+        }
+
+
       </div>
 
       {!lastIdx && <div className="divider my-0 py-0 h-[0.4px] bg-black" />}
