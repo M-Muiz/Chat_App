@@ -12,9 +12,9 @@ const SideBar = () => {
     console.log(show)
 
     return (
-        <div className={`flex flex-col border-r h-full bg-[#536dfe] relative rounded-l-md ${show ? "w-32 smoothanimate" : "w-[400px]"} smoothanimate`}>
+        <div className={`flex flex-col border-r h-full bg-[#536dfe] relative rounded-l-md ${show ? "w-24 flex items-center smoothanimate" : "w-[400px]"} smoothanimate`}>
 
-            <div className="flex items-center gap-4 h-[70px] border p-6 border-black/20">
+            <div className="flex items-center gap-4 h-[70px] border p-6 border-black/20 w-full">
                 {show ? <BiMenuAltRight size={24} cursor="pointer" onClick={() => toggleShow()} /> :
                     <BiMenuAltLeft size={24} cursor="pointer" onClick={() => toggleShow()} />
                 }

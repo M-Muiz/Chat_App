@@ -6,7 +6,6 @@ const useSendMessage = () => {
     const [loading, setLoading] = useState(false);
     const { messages, setMessages, selectedConversation }: any = useConversation();
 
-
     const sendMessage = async (message: any) => {
         setLoading(true);
 
@@ -18,21 +17,22 @@ const useSendMessage = () => {
                 },
                 body: JSON.stringify({ message }),
             });
-            const data = await res.json();
-            console.log(data)
+
+            const data: any = await res.json();
+            console.log(data);
             if (data.error) throw new Error(data.error);
 
-            setMessages([...messages, data]);
+            await setMessages([...messages, data]);
+            
         } catch (error: any) {
-            console.log(error)
-            toast.error(error.message)
+            console.log(error);
+            toast.error(error.message);
         } finally {
             setLoading(false);
         }
-
     };
-    return { sendMessage, loading }
 
+    return { sendMessage, loading };
 };
 
 export default useSendMessage;

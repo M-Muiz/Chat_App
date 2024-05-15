@@ -24,7 +24,7 @@ const MessageContainer = () => {
 
 
     return (
-        <div className='md:min-w-[450px] w-[1100px] flex flex-col bg-white rounded-r-md relative'>
+        <div className='md:min-w-[450px] w-[200px] xl:w-[1100px]  flex flex-col bg-white rounded-r-md relative'>
             <div className="absolute top-0 right-0 left-0 bottom-0 bg-[#536dfe] opacity-10"></div>
             {!selectedConversation ?
                 (<NoChatSelected />)
@@ -37,10 +37,10 @@ const MessageContainer = () => {
                                 </span>
                                 <span className='text-[#536dfe] font-bold'>{selectedConversation.username}</span>
                             </div>
-                            <div className='flex items-center gap-2'>
-                                <MdDelete size={20} onClick={newUpdate} color={'#536dfe'}  cursor={"pointer"}/>
+                            <div className='flex items-center gap-2 '>
+                                <MdDelete size={20} onClick={newUpdate} color={'#536dfe'}  />
 
-                                <BiSolidUserDetail color='#536dfe' size={20} />
+                                <BiSolidUserDetail color='#536dfe' size={20} className='cursor-pointer' />
 
                             </div>
                         </div>

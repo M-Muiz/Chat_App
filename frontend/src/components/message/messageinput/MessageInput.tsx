@@ -27,7 +27,7 @@ const MessageInput = () => {
             <div className="w-full relative">
                 <input onChange={(e: any) => handleChange(e)} value={message} type="text" className={`border_none text-sm w-full pt-2.5 pb-1 bg-transparent outline-none border-b border-black/15 placeholder:text-[#536dfe] text-black font-semibold ${inputError ? "placeholder:text-red-500 border-red-500" : ""}`} placeholder='Send a message' />
                 <button className="absolute inset-y-0 end-0 flex items-center pe-3 ">
-                    {loading ? <div className="loading laoding-spinner"></div> : <BsSend className={`${inputError ? "text-red-500" : "text-[#536dfe]"}`} />}
+                    {loading ? <div className="loading laoding-spinner text-[#536dfe]"></div> : <BsSend className={`${inputError ? "text-red-500" : "text-[#536dfe]"}`} />}
                 </button>
             </div>
         </form>
