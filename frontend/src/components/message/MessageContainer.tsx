@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 import { useAuthContext } from '../../context/AuthContext';
 import { MdDelete } from "react-icons/md";
 import { BiSolidUserDetail } from "react-icons/bi";
+import toast from 'react-hot-toast';
+import { IoConstructSharp } from 'react-icons/io5';
 
 
 const MessageContainer = () => {
@@ -15,6 +17,11 @@ const MessageContainer = () => {
     useEffect(() => {
         return setSelectedConversation(null)
     }, [])
+
+    const newUpdate = () => {
+        toast(<div className="flex items-center gap-2" > <IoConstructSharp /> Coming Soon</div >)
+    }
+
 
     return (
         <div className='md:min-w-[450px] w-[1100px] flex flex-col bg-white rounded-r-md relative'>
@@ -31,8 +38,8 @@ const MessageContainer = () => {
                                 <span className='text-[#536dfe] font-bold'>{selectedConversation.username}</span>
                             </div>
                             <div className='flex items-center gap-2'>
-                            <MdDelete color='#536dfe' size={20}/>
-                            <BiSolidUserDetail color='#536dfe' size={20} />
+                                <MdDelete color='#536dfe' size={20} onClick={newUpdate} />
+                                <BiSolidUserDetail color='#536dfe' size={20} />
 
                             </div>
                         </div>

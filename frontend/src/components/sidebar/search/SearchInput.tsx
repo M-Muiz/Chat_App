@@ -31,7 +31,7 @@ const SearchInput = () => {
   }
 
   const newUpdate = () => {
-    toast(<div className="flex items-center gap-2"><IoConstructSharp /> Coming Soon</div>)
+    toast(<div className="flex items-center gap-2" > <IoConstructSharp /> Coming Soon</div >)
   }
 
   return (
