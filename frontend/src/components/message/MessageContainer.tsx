@@ -38,7 +38,8 @@ const MessageContainer = () => {
                                 <span className='text-[#536dfe] font-bold'>{selectedConversation.username}</span>
                             </div>
                             <div className='flex items-center gap-2'>
-                                <MdDelete color='#536dfe' size={20} onClick={newUpdate} />
+                                <MdDelete size={20} onClick={newUpdate} color={'#536dfe'}  cursor={"pointer"}/>
+
                                 <BiSolidUserDetail color='#536dfe' size={20} />
 
                             </div>
