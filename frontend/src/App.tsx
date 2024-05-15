@@ -8,7 +8,6 @@ import { useAuthContext } from "./context/AuthContext"
 const App = () => {
 
   const { authUser }: any = useAuthContext();
-  console.log(authUser)
 
   return (
     <div>
@@ -22,4 +21,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
