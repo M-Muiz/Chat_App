@@ -11,7 +11,6 @@ const Message = ({ message }: any) => {
 
     const created = new Date(message.createdAt);
     const messageDate = created.toLocaleDateString();
-    const messageTime = ''
 
     return (
         <div className={`chat py-6 ${chatClassName}`}>
